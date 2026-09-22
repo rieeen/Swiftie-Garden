@@ -135,6 +135,21 @@ body {
     border-radius: 15px;
 }
 
+.btn-cerrar-sesion {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    width: auto;
+    min-width: 0;
+    display: inline;
+}
+
+.nav-menu-item:has(.btn-cerrar-sesion) {
+    width: auto;
+}
+
 .nav-toggle {
     color: white;
     background: none;
@@ -209,79 +224,6 @@ body {
     min-height: 100%;
     padding: 15px 20px 0;
 }
-
-/* CARRITO */
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
-*{
-    margin: 0;
-    padding:0;
-    font-family: 'Open Sans';
-}
-
-.contenedor {
-    max-width: 1200px;
-    padding: 10px;
-    margin: 0 auto;
-    width: 100%;
-}
-/* SECCION CONTENEDOR DE ITEMS */
-.contenedor .contenedor-items {
-    width: 100%;
-}
-
-.contenedor .contenedor-items .item{
-    max-width: 200px;
-    margin: auto;
-    border: 1px solid #666;
-    border-radius: 10px;
-    padding: 20px;
-    transition: .3s;
-}
-
-.contenedor .contenedor-items .item .img-item{
-    width: 100%;
-}
-
-.contenedor .contenedor-items .item:hover{
-    box-shadow: 0 0 10px #666;
-    scale: 1.05;
-}
-
-.contenedor .contenedor-items .item .titulo-item{
-    display: block;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.contenedor .contenedor-items .item .precio-item{
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    font-size: 22px;
-}
-
-.contenedor .contenedor-items .item .boton-item{
-    display: block;
-    margin: 10px auto;
-    border: none;
-    background-color: #355A35;
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-  .text-center1 {
-    text-align: center;
-  }
-  
-  .section-heading1 {
-    font-size: 3rem;
-    color: var(--primary);
-    padding: 1rem 0;
-  }
 
 /* =========================================
    PANEL DE ADMINISTRADOR

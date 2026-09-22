@@ -29,7 +29,7 @@
                     <a href="poderesa.html" class="nav-menu-link nav-link">Poderes</a>
                 </li>
                 <li class="nav-menu-item">
-                    <a href="https://wa.me/3317427391" class="nav-menu-link nav-link">Contacto</a>
+                    <button onclick="cerrarSesion()" class="nav-menu-link nav-link btn-cerrar-sesion"> Cerrar sesión
                 </li>
             </ul>
         </nav>
@@ -253,6 +253,15 @@
 
 </main>
           
+<script>
+function cerrarSesion() {
+    localStorage.removeItem("teamId");
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("tipoUsuario");
+
+    window.location.href = "indexr.html";
+}
+</script>
 
 <!--FOOTER-->
 

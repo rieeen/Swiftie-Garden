@@ -294,6 +294,21 @@ body {
     border-radius: 15px;
 }
 
+.btn-cerrar-sesion {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    width: auto;
+    min-width: 0;
+    display: inline;
+}
+
+.nav-menu-item:has(.btn-cerrar-sesion) {
+    width: auto;
+}
+
 .nav-toggle {
     color: white;
     background: none;
