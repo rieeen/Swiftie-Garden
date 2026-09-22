@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 app.get("/", (req, res) => {
-    res.sendFile("index.html", { root: ".." });
+    res.sendFile("index.html", { root: process.cwd() });
 });
 
-app.use(express.static("..", { index: false }));
+app.use(express.static(process.cwd(), { index: false }));
 
 const credential = new ClientSecretCredential(
     process.env.TENANT_ID,
