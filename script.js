@@ -181,7 +181,7 @@ async function canjearCodigo(tipo) {
     try {
 
         const respuesta = await fetch(
-            "http://localhost:3000/api/codigos/canjear",
+            "/api/codigos/canjear",
             {
                 method: "POST",
 
@@ -270,7 +270,7 @@ async function girarRuleta(tipo) {
         // ========================================
 
         const respuesta = await fetch(
-            "http://localhost:3000/api/ruleta/girar",
+            "/api/ruleta/girar",
             {
                 method: "POST",
 
@@ -440,7 +440,7 @@ async function cargarGirosTeam() {
     try {
 
         const respuesta = await fetch(
-            `http://localhost:3000/api/giros/${teamId}`
+            `/api/giros/${teamId}`
         );
 
         const datos =

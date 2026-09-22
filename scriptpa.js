@@ -206,7 +206,7 @@ async function cargarTeamsAdmin() {
 
         // Obtener Teams
         const respuestaTeams = await fetch(
-            "http://localhost:3000/api/teams"
+            "/api/teams"
         );
 
         const datosTeams = await respuestaTeams.json();
@@ -225,7 +225,7 @@ async function cargarTeamsAdmin() {
         for (const team of teamsAdminData) {
 
             const respuestaPoderes = await fetch(
-                `http://localhost:3000/api/poderes/${team.teamId}`
+                `/api/poderes/${team.teamId}`
             );
 
             const datosPoderes = await respuestaPoderes.json();
@@ -288,7 +288,7 @@ async function darPoderManual() {
         mensaje.textContent = "✨ Asignando poder...";
 
         const respuesta = await fetch(
-            "http://localhost:3000/api/poderes/manual",
+            "/api/poderes/manual",
             {
                 method: "POST",
                 headers: {
@@ -585,7 +585,7 @@ function agregarEventosRevocar() {
                 boton.textContent = "Revocando...";
 
                 const respuesta = await fetch(
-                    `http://localhost:3000/api/poderes/${id}`,
+                    `/api/poderes/${id}`,
                     {
                         method: "DELETE"
                     }

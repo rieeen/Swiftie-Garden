@@ -60,7 +60,7 @@
              // =========================================
 
              const respuesta = await fetch(
-                 "http://localhost:3000/api/codigos",
+                 "/api/codigos",
                  {
                      method: "POST",
 
@@ -267,7 +267,7 @@ async function cargarCodigos() {
     try {
 
         const respuesta = await fetch(
-            "http://localhost:3000/api/codigos"
+            "/api/codigos"
         );
 
         const datos = await respuesta.json();
