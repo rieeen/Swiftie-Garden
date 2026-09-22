@@ -9,7 +9,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(".."));
+app.get("/", (req, res) => {
+    res.sendFile("indexr.html", { root: ".." });
+});
+
+app.use(express.static("..", { index: false }));
 
 const credential = new ClientSecretCredential(
     process.env.TENANT_ID,
@@ -1604,10 +1608,6 @@ console.log(
 
     }
 
-});
-
-app.get("/", (req, res) => {
-    res.send("Backend de Swiftie Garden funcionando 💚");
 });
 
 app.listen(PORT, "0.0.0.0", () => {

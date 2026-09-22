@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiftie Garden</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="stylesp.css">
+    <link rel="stylesheet" href="styles.css">
 
   </head>
 
@@ -23,20 +23,18 @@
             </button>
             <ul class="nav-menu nav-menu_visible">
                 <li class="nav-menu-item">
-                    <a href="inicio.html" class="nav-menu-link nav-link">Inicio</a>
+                    <a href="inicio.html" class="nav-menu-link nav-link nav-menu-link_active">Inicio</a>
                 </li>
                 <li class="nav-menu-item">
-                    <a href="poderes.html" class="nav-menu-link nav-link nav-menu-link_active">Poderes</a>
+                    <a href="poderes.html" class="nav-menu-link nav-link">Poderes</a>
                 </li>
                 <li class="nav-menu-item">
-                <li class="nav-menu-item">
-                     <button onclick="cerrarSesion()" class="nav-menu-link nav-link btn-cerrar-sesion"> Cerrar sesión </button>
+                    <button onclick="cerrarSesion()" class="nav-menu-link nav-link btn-cerrar-sesion"> Cerrar sesión </button>
                 </li>
             </ul>
         </nav>
     </header>
-
-    <script src="https://kit.fontawesome.com/e980d7fbff.js" crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/e980d7fbff.js" crossorigin="anonymous"></script>
 
     <section id="tranding">
       <div class="container">
@@ -240,77 +238,6 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
    <!--Carrito-->
-   <!-- MIS PODERES -->
-<section class="mis-poderes">
-  <div class="mis-poderes-container">
-
-    <div class="mis-poderes-header">
-      <div>
-        <h1># Mis poderes</h1>
-        <p>Estos son los poderes que tienes actualmente en tu team.</p>
-      </div>
-
-      <div class="team-info">
-        <span>🌿</span>
-        <strong id="nombreTeam">Debut</strong>
-      </div>
-    </div>
-    <div class="poderes-resumen">
-
-    <div class="resumen-item">
-        <span>🌿</span>
-        <strong id="totalPoderes">0</strong>
-        <small>Totales</small>
-    </div>
-
-    <div class="resumen-item">
-        <span>🌱</span>
-        <strong id="totalNormales">0</strong>
-        <small>Normales</small>
-    </div>
-
-    <div class="resumen-item">
-        <span>💎</span>
-        <strong id="totalRaros">0</strong>
-        <small>Raros</small>
-    </div>
-
-    <div class="resumen-item">
-        <span>👑</span>
-        <strong id="totalLegendarios">0</strong>
-        <small>Legendarios</small>
-    </div>
-
-</div>
-    <div class="poderes-filtros">
-    <button class="filtro active" data-filtro="todos">
-        Todos
-    </button>
-
-    <button class="filtro" data-filtro="normal">
-        🌱 Normales
-    </button>
-
-    <button class="filtro" data-filtro="raro">
-        💎 Raros
-    </button>
-
-    <button class="filtro" data-filtro="legendario">
-        👑 Legendarios
-    </button>
-
-</div>
-
-   <div class="poderes-grid" id="poderesGrid">
-
-    <p class="poderes-cargando">
-        🌱 Cargando tus poderes...
-    </p>
-
-</div>
-
-  </div>
-</section>
 
    <section>
     <h1 class="text-center1 section-heading1">¡Hola!, ¿qué poder ganaremos hoy?</h1>
@@ -323,7 +250,8 @@
 <section class="contenedor">
 
     <div class="contenedor-items">
-       <!-- gambling -->
+
+        <!-- gambling -->
 
         <section class="ruletas-section">
 
@@ -656,7 +584,15 @@
         </section>
     </div>
 </section>
-          
+          <script>
+function cerrarSesion() {
+    localStorage.removeItem("teamId");
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("tipoUsuario");
+
+    window.location.href = "index.html";
+}
+</script>
 
 <!--FOOTER-->
 
@@ -715,289 +651,7 @@
   nomodule
   src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
 ></script>
-<script>
 
-              
-
-function cerrarSesion() {
-    localStorage.removeItem("teamId");
-    localStorage.removeItem("usuario");
-    localStorage.removeItem("tipoUsuario");
-
-    window.location.href = "index.html";
-}
-// ========================================
-// MIS PODERES DEL TEAM
-// ========================================
-
-async function cargarPoderesTeam() {
-
-    const teamId = localStorage.getItem("teamId");
-
-    const grid = document.getElementById("poderesGrid");
-
-    if (!teamId) {
-
-        grid.innerHTML = `
-            <p class="poderes-cargando">
-                ❌ No se encontró el equipo.
-            </p>
-        `;
-
-        return;
-    }
-
-    try {
-
-        const respuesta = await fetch(
-            `http://localhost:3000/api/poderes/${teamId}`
-        );
-
-        const datos = await respuesta.json();
-
-        if (!respuesta.ok || !datos.success) {
-
-            console.error(
-                "❌ Error al cargar poderes:",
-                datos.mensaje
-            );
-
-            grid.innerHTML = `
-                <p class="poderes-cargando">
-                    ❌ No se pudieron cargar tus poderes.
-                </p>
-            `;
-
-            return;
-        }
-
-        const poderes = datos.poderes;
-
-        console.log(
-            "💎 Poderes del Team:",
-            poderes
-        );
-
-        // ========================================
-        // SI NO TIENE PODERES
-        // ========================================
-
-        if (poderes.length === 0) {
-
-            grid.innerHTML = `
-                <p class="poderes-cargando">
-                    🌱 Todavía no tienes poderes.
-                </p>
-            `;
-
-            return;
-        }
-
-        // ========================================
-// CONTADORES
-// ========================================
-
-const total = poderes.length;
-
-const normales = poderes.filter(
-    poder => poder.ruleta === "normal"
-).length;
-
-const raros = poderes.filter(
-    poder => poder.ruleta === "raro"
-).length;
-
-const legendarios = poderes.filter(
-    poder => poder.ruleta === "legendario"
-).length;
-
-
-document.getElementById("totalPoderes").textContent = total;
-document.getElementById("totalNormales").textContent = normales;
-document.getElementById("totalRaros").textContent = raros;
-document.getElementById("totalLegendarios").textContent = legendarios;
-
-        // ========================================
-// AGRUPAR PODERES REPETIDOS
-// ========================================
-
-const poderesAgrupados = {};
-
-poderes.forEach(poder => {
-
-    const clave = `${poder.ruleta}-${poder.poder}`;
-
-    if (!poderesAgrupados[clave]) {
-
-        poderesAgrupados[clave] = {
-            poder: poder.poder,
-            ruleta: poder.ruleta,
-            cantidad: 0,
-            fecha: poder.fecha
-        };
-
-    }
-
-    poderesAgrupados[clave].cantidad++;
-
-});
-
-
-// ========================================
-// CREAR TARJETAS
-// ========================================
-
-grid.innerHTML = "";
-
-Object.values(poderesAgrupados).forEach(poder => {
-
-    let categoria = "NORMAL";
-    let emoji = "🌱";
-
-    if (poder.ruleta === "raro") {
-        categoria = "RARO";
-        emoji = "💎";
-    }
-
-    if (poder.ruleta === "legendario") {
-        categoria = "LEGENDARIO";
-        emoji = "👑";
-    }
-
-
-    const fecha = new Date(
-        poder.fecha
-    ).toLocaleDateString(
-        "es-MX",
-        {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric"
-        }
-    );
-
-
-    const tarjeta =
-        document.createElement("article");
-
-    tarjeta.className =
-        `poder-card ${poder.ruleta}`;
-
-    tarjeta.dataset.tipo =
-        poder.ruleta;
-
-
-    tarjeta.innerHTML = `
-
-        <span class="poder-categoria">
-            ${emoji} ${categoria}
-        </span>
-
-        <h2>
-            ${poder.poder}
-        </h2>
-
-        <p>
-            Poder obtenido mediante la ruleta
-            ${categoria.toLowerCase()}.
-        </p>
-
-        <strong class="poder-cantidad">
-            ×${poder.cantidad}
-        </strong>
-
-        <span class="poder-fecha">
-            Obtenido: ${fecha}
-        </span>
-
-    `;
-
-
-    grid.appendChild(tarjeta);
-
-});
-
-        configurarFiltrosPoderes();
-
-    } catch (error) {
-
-        console.error(
-            "❌ Error al cargar poderes:",
-            error
-        );
-
-        grid.innerHTML = `
-            <p class="poderes-cargando">
-                ❌ No se pudo conectar con el servidor.
-            </p>
-        `;
-    }
-}
-
-
-// ========================================
-// FILTROS
-// ========================================
-
-function configurarFiltrosPoderes() {
-
-    const filtros =
-        document.querySelectorAll(
-            ".mis-poderes .filtro"
-        );
-
-    const tarjetas =
-        document.querySelectorAll(
-            ".mis-poderes .poder-card"
-        );
-
-
-    filtros.forEach(filtro => {
-
-        filtro.onclick = () => {
-
-            filtros.forEach(btn => {
-                btn.classList.remove("active");
-            });
-
-            filtro.classList.add("active");
-
-
-            const tipoSeleccionado =
-                filtro.dataset.filtro;
-
-
-            tarjetas.forEach(tarjeta => {
-
-                if (
-                    tipoSeleccionado === "todos" ||
-                    tarjeta.dataset.tipo === tipoSeleccionado
-                ) {
-
-                    tarjeta.style.display = "block";
-
-                } else {
-
-                    tarjeta.style.display = "none";
-
-                }
-
-            });
-
-        };
-
-    });
-
-}
-
-
-// ========================================
-// CARGAR AL ABRIR LA PÁGINA
-// ========================================
-
-cargarPoderesTeam();
-
-</script>
     <script src="script.js"></script>
 
   </body>
