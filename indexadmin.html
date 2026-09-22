@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftie Garden</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="stylesadmins.css">
+
+  </head>
+
+  <body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="https://i.ibb.co/bM419bgv/SG-icons-19.png" alt="LOGO">
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu nav-menu_visible">
+                <li class="nav-menu-item">
+                    <a href="indexadmin.html" class="nav-menu-link nav-link nav-menu-link_active">Inicio</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="poderesa.html" class="nav-menu-link nav-link">Poderes</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="https://wa.me/3317427391" class="nav-menu-link nav-link">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+     <script src="https://kit.fontawesome.com/e980d7fbff.js" crossorigin="anonymous"></script>
+
+    <!-- =========================================
+     PANEL DE ADMINISTRACIÓN
+========================================= -->
+
+<main class="admin-panel">
+
+    <section class="admin-container">
+
+        <h1 class="admin-title">
+            Panel de administración
+        </h1>
+
+        <p class="admin-subtitle">
+            Genera códigos para las ruletas de Swiftie Garden
+        </p>
+
+
+        <!-- =================================
+             GENERADOR DE CÓDIGOS
+        ================================== -->
+
+        <div class="admin-card">
+
+            <h2 class="admin-card-title">
+                Generar código
+            </h2>
+
+            <p class="admin-card-subtitle">
+                Selecciona la ruleta y la cantidad de giros que tendrá el código.
+            </p>
+
+
+            <div class="admin-form">
+
+                <!-- RU LETA / RAREZA -->
+
+                <div class="admin-field">
+
+                    <label for="rarezaCodigo">
+                        Ruleta
+                    </label>
+
+                    <select id="rarezaCodigo">
+
+                        <option value="normal">
+                            Poderes normales
+                        </option>
+
+                        <option value="raro">
+                            Poderes raros
+                        </option>
+
+                        <option value="legendario">
+                            Poderes legendarios
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CANTIDAD DE GIROS -->
+
+                <div class="admin-field">
+
+                    <label for="cantidadGiros">
+                        Cantidad de giros
+                    </label>
+
+                    <select id="cantidadGiros">
+
+                        <option value="1">1 giro</option>
+                        <option value="2">2 giros</option>
+                        <option value="3">3 giros</option>
+                        <option value="5">5 giros</option>
+                        <option value="10">10 giros</option>
+                        <option value="15">15 giros</option>
+                        <option value="20">20 giros</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    type="button"
+                    class="admin-generate-button"
+                    id="generarCodigo"
+                >
+                    GENERAR CÓDIGO
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 RESULTADO DEL CÓDIGO
+            ================================== -->
+
+            <div
+                class="codigo-generado"
+                id="codigoGeneradoContainer"
+                style="display: none;"
+            >
+
+                <p class="codigo-label">
+                    Código generado
+                </p>
+
+                <div class="codigo-box">
+
+                    <span id="codigoGenerado">
+                        —
+                    </span>
+
+                    <button
+                        type="button"
+                        id="copiarCodigo"
+                        class="copy-button"
+                    >
+                        <ion-icon name="copy-outline"></ion-icon>
+                    </button>
+
+                </div>
+
+                <p
+                    class="codigo-info"
+                    id="codigoInfo"
+                >
+                    —
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             CÓDIGOS GENERADOS
+        ================================== -->
+
+        <div class="admin-card">
+
+            <div class="admin-card-header">
+
+                <div>
+
+                    <h2 class="admin-card-title">
+                        Códigos generados
+                    </h2>
+
+                    <p class="admin-card-subtitle">
+                        Consulta los códigos creados y sus giros disponibles.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="codes-table-container">
+
+                <table class="codes-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Código
+                            </th>
+
+                            <th>
+                                Ruleta
+                            </th>
+
+                            <th>
+                                Giros
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="codesTableBody">
+
+                        <!--
+                            Los códigos se agregarán
+                            posteriormente desde el backend.
+                        -->
+
+                        <tr>
+
+                            <td colspan="4" class="empty-codes">
+                                No hay códigos generados.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+          
+
+<!--FOOTER-->
+
+<footer class="footer">
+  <ul class="social-icon">
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="mail-outline"></ion-icon>
+      </a>
+    </li>
+  </ul>
+  <ul class="menu">
+    <li class="menu-elem">
+      <a href="index.html" class="menu-icon"> Inicio </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> Ayuda </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> Facturacion </a>
+    </li>
+    <li class="menu-elem">
+      <a href="poderes.html" class="menu-icon"> Ver todos los poderes </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> Sobre Nosotros </a>
+    </li>
+  </ul>
+  <p class="text">@2026 | Todos los derechos reservados</p>
+</footer>
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
+
+    <script src="scriptadmin.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,1322 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --primary: #355a35;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1440px) {
+  html {
+    zoom: 1.5;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    zoom: 1.7;
+  }
+}
+
+@media (min-width: 3860px) {
+  html {
+    zoom: 2.5;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg);
+}
+
+.container {
+  max-width: 124rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 3rem;
+  color: var(--primary);
+  padding: 1rem 0;
+}
+
+#tranding {
+  padding: 4rem 0;
+  vertical-align: top;
+}
+
+@media (max-width:1440px) {
+  #tranding {
+    padding: 7rem 0;
+  }
+}
+
+#tranding .tranding-slider {
+  height: 52rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  #tranding .tranding-slider {
+    height: 45rem;
+  }
+}
+
+.tranding-slide {
+  width: 37rem;
+  height: 42rem;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  .tranding-slide {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+  .tranding-slide .tranding-slide-img img {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+}
+
+.tranding-slide .tranding-slide-img img {
+  width: 37rem;
+  height: 42rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.tranding-slide .tranding-slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tranding-slide-content .power-price {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: var(--white);
+}
+
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: var(--white);
+}
+
+.power-rating {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.rating ion-icon {
+  color: #f7f791;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tranding-slider-control .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: '';
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+
+/* titulo */
+
+.header {
+    grid-area: header;
+    background-color: #355A35;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.logo img{
+    height: 83px;
+    width: auto;
+    padding: 10px 40px;
+    line-height: 100px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    background-color: #2b4a2b;
+    transition: 0.5s;
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 15px;
+}
+
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    
+    display: none;
+}
+
+@media (max-width: 768px) {
+    
+    .header {
+        height: 80px;
+    }
+    
+    .logo img{
+        height: 60px;
+        width: auto;
+        padding: 0 35px;
+        line-height: 50px;
+        align-self: center;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        background-color: #355A35;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+    
+    .nav-menu-item {
+        line-height: 70px;
+    }
+    
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #2b4a2b;
+    }
+
+    .nav-toggle {
+        display: block;
+        color: black;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+body {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+    padding: 15px 20px 0;
+}
+
+/* CARRITO */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Open Sans';
+}
+
+.contenedor {
+    max-width: 1200px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+}
+/* SECCION CONTENEDOR DE ITEMS */
+.contenedor .contenedor-items {
+    width: 100%;
+}
+
+.contenedor .contenedor-items .item{
+    max-width: 200px;
+    margin: auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+}
+
+.contenedor .contenedor-items .item .img-item{
+    width: 100%;
+}
+
+.contenedor .contenedor-items .item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+
+.contenedor .contenedor-items .item .titulo-item{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contenedor .contenedor-items .item .precio-item{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.contenedor .contenedor-items .item .boton-item{
+    display: block;
+    margin: 10px auto;
+    border: none;
+    background-color: #355A35;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  .text-center1 {
+    text-align: center;
+  }
+  
+  .section-heading1 {
+    font-size: 3rem;
+    color: var(--primary);
+    padding: 1rem 0;
+  }
+
+  /* =========================================
+   MIS PODERES
+   ========================================= */
+
+.mis-poderes {
+    width: 100%;
+    padding: 50px 20px 70px;
+    box-sizing: border-box;
+    background: #f5f5f5;
+}
+
+.mis-poderes-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ENCABEZADO */
+
+.mis-poderes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.mis-poderes-header h1 {
+    margin: 0 0 8px;
+    color: #355a35;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.mis-poderes-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+
+/* INFORMACIÓN DEL TEAM */
+
+.mis-poderes .team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    color: #355a35;
+    white-space: nowrap;
+}
+
+.mis-poderes .team-info span {
+    font-size: 22px;
+}
+
+.mis-poderes .team-info strong {
+    font-size: 15px;
+}
+
+
+/* RESUMEN */
+
+.mis-poderes .poderes-resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.mis-poderes .resumen-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #355a35;
+}
+
+.mis-poderes .resumen-card.normal {
+    border-left-color: #355a35;
+}
+
+.mis-poderes .resumen-card.raro {
+    border-left-color: #527d8a;
+}
+
+.mis-poderes .resumen-card.legendario {
+    border-left-color: #8a6d3b;
+}
+
+.mis-poderes .resumen-icon {
+    font-size: 28px;
+}
+
+.mis-poderes .resumen-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mis-poderes .resumen-card div span {
+    color: #777;
+    font-size: 12px;
+}
+
+.mis-poderes .resumen-card div strong {
+    color: #333;
+    font-size: 22px;
+}
+
+
+/* FILTROS */
+
+.mis-poderes .poderes-filtros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.mis-poderes .filtro {
+    padding: 10px 18px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #555;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mis-poderes .filtro:hover {
+    border-color: #355a35;
+    color: #355a35;
+}
+
+.mis-poderes .filtro.active {
+    background: #355a35;
+    border-color: #355a35;
+    color: #ffffff;
+}
+
+
+/* GRID DE PODERES */
+
+.mis-poderes .poderes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* TARJETAS */
+
+.mis-poderes .poder-card {
+    position: relative;
+    padding: 25px;
+    min-height: 210px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #355a35;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mis-poderes .poder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
+}
+
+
+/* COLORES SEGÚN RAREZA */
+
+.mis-poderes .poder-card.normal {
+    border-top-color: #355a35;
+}
+
+.mis-poderes .poder-card.raro {
+    border-top-color: #527d8a;
+}
+
+.mis-poderes .poder-card.legendario {
+    border-top-color: #8a6d3b;
+}
+
+
+/* CATEGORÍA */
+
+.mis-poderes .poder-categoria {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.mis-poderes .poder-card.normal .poder-categoria {
+    color: #355a35;
+}
+
+.mis-poderes .poder-card.raro .poder-categoria {
+    color: #527d8a;
+}
+
+.mis-poderes .poder-card.legendario .poder-categoria {
+    color: #8a6d3b;
+}
+
+
+/* NOMBRE */
+
+.mis-poderes .poder-card h2 {
+    margin: 0 0 12px;
+    color: #333;
+    font-size: 21px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.mis-poderes .poder-card p {
+    margin: 0 0 20px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* FECHA */
+
+.mis-poderes .poder-fecha {
+    display: block;
+    color: #999;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .mis-poderes .poderes-resumen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mis-poderes .poderes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .mis-poderes {
+        padding: 35px 15px 50px;
+    }
+
+    .mis-poderes-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mis-poderes-header h1 {
+        font-size: 27px;
+    }
+
+    .mis-poderes .team-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mis-poderes .poderes-resumen {
+        grid-template-columns: 1fr;
+    }
+
+    .mis-poderes .poderes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mis-poderes .poderes-filtros {
+        justify-content: flex-start;
+    }
+
+    .mis-poderes .filtro {
+        font-size: 13px;
+        padding: 9px 14px;
+    }
+}
+
+
+/* ================================
+   SECCIÓN DE LAS 3 RULETAS
+================================ */
+
+.ruletas-section {
+    width: 100%;
+    padding: 40px 20px 80px;
+    box-sizing: border-box;
+}
+
+.ruletas-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+
+/* =========================================
+   3 RULETAS - ESTILO MÁQUINA TRAGAMONEDAS
+   ========================================= */
+
+.ruletas-section {
+    width: 100%;
+    padding: 40px 20px 80px;
+}
+
+.ruletas-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+/* =========================
+   MÁQUINA
+   ========================= */
+
+.slot-machine {
+    width: 100%;
+    padding: 28px 24px 25px;
+
+    background: #ffffff;
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.14),
+        inset 0 0 0 2px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+}
+
+/* Colores de cada máquina */
+
+.slot-machine.normal {
+    border-top: 8px solid #355a35;
+}
+
+.slot-machine.raro {
+    border-top: 8px solid #527d8a;
+}
+
+.slot-machine.legendario {
+    border-top: 8px solid #8a6d3b;
+}
+
+/* =========================
+   TÍTULOS
+   ========================= */
+
+.slot-title {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.slot-subtitle {
+    margin: 7px 0 22px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* =========================
+   VENTANA DE LA RULETA
+   ========================= */
+
+.slot-window {
+    position: relative;
+
+    width: 100%;
+    height: 220px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #d9d9d9 0%,
+            #f7f7f7 22%,
+            #ffffff 50%,
+            #f7f7f7 78%,
+            #d9d9d9 100%
+        );
+
+    border: 5px solid #303030;
+
+    box-shadow:
+        inset 0 8px 12px rgba(0,0,0,0.20),
+        inset 0 -8px 12px rgba(0,0,0,0.20),
+        0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Franja central donde cae el resultado */
+
+.slot-window::before {
+    content: "";
+
+    position: absolute;
+    z-index: 20;
+
+    left: 0;
+    right: 0;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 72px;
+
+    pointer-events: none;
+
+    border-top: 2px solid rgba(53, 90, 53, 0.45);
+    border-bottom: 2px solid rgba(53, 90, 53, 0.45);
+
+    background: rgba(255,255,255,0.20);
+
+    box-shadow:
+        0 0 15px rgba(0,0,0,0.08);
+}
+
+/* Oscurece los extremos */
+
+.slot-window::after {
+    content: "";
+
+    position: absolute;
+    z-index: 15;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.30),
+            transparent 25%,
+            transparent 75%,
+            rgba(0,0,0,0.30)
+        );
+}
+
+/* =========================
+   CARRETE
+   ========================= */
+
+.slot-reel {
+    position: absolute;
+
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    will-change: transform;
+}
+
+/* =========================
+   CADA PODER
+   ========================= */
+
+.slot-item {
+    width: 100%;
+    height: 72px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 18px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.slot-item span {
+    display: block;
+
+    width: 100%;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #777;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease,
+        font-size 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Resultado central */
+
+.slot-item.active span {
+    font-size: 22px;
+    font-weight: 800;
+
+    transform: scale(1.05);
+
+    color: #355a35;
+}
+
+/* Colores */
+
+.normal .slot-item.active span {
+    color: #355a35;
+}
+
+.raro .slot-item.active span {
+    color: #527d8a;
+}
+
+.legendario .slot-item.active span {
+    color: #8a6d3b;
+}
+
+/* =========================
+   CÓDIGO
+   ========================= */
+
+.codigo-input {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px 15px;
+
+    border: 2px solid #ddd;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    text-align: center;
+
+    transition: 0.2s;
+
+    background: #fafafa;
+}
+
+.codigo-input:focus {
+    border-color: #355a35;
+    background: #fff;
+}
+
+/* =========================
+   BOTÓN
+   ========================= */
+
+.slot-button {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #355a35;
+    color: white;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.raro .slot-button {
+    background: #527d8a;
+}
+
+.legendario .slot-button {
+    background: #8a6d3b;
+}
+
+.slot-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,0.15);
+}
+
+.slot-button:active {
+    transform: translateY(0);
+}
+
+.slot-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================
+   BOTÓN CANJEAR CÓDIGO
+   ========================= */
+
+.redeem-button {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 11px 14px;
+
+    border: 2px solid #ddd;
+    border-radius: 12px;
+
+    background: #f8f8f8;
+    color: #555;
+
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* NORMAL */
+
+.normal .redeem-button:hover {
+    background: #355a35;
+    border-color: #355a35;
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(53, 90, 53, 0.20);
+}
+
+/* RARO */
+
+.raro .redeem-button:hover {
+    background: #527d8a;
+    border-color: #527d8a;
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(82, 125, 138, 0.20);
+}
+
+/* LEGENDARIO */
+
+.legendario .redeem-button:hover {
+    background: #8a6d3b;
+    border-color: #8a6d3b;
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(138, 109, 59, 0.20);
+}
+
+.redeem-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.redeem-button:focus-visible {
+    outline: 2px solid #555;
+    outline-offset: 2px;
+}
+
+/* =========================
+   GIROS
+   ========================= */
+
+.giros-restantes {
+    margin: 13px 0 5px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #555;
+}
+
+.slot-result {
+    min-height: 22px;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .ruletas-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 650px) {
+
+    .ruletas-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .ruletas-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .slot-machine {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+}
+
+/* =========================================
+   EFECTO REALISTA DEL CARRETE
+   ========================================= */
+
+.slot-window.spinning .slot-item span {
+    opacity: 0.65;
+    filter: blur(1px);
+    transform: scale(0.95);
+}
+
+.slot-window.spinning {
+    box-shadow:
+        inset 0 10px 15px rgba(0, 0, 0, 0.25),
+        inset 0 -10px 15px rgba(0, 0, 0, 0.25),
+        0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.slot-window .slot-item.active span {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* FOOTER */
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: #355A35;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10px 5px;
+  flex-wrap: wrap;
+}
+
+.icon-elem {
+  list-style: none;
+}
+
+.icon {
+  color: white;
+  font-size: 32px;
+  display: inline-block;
+  margin: 0 10px;
+  transition: 0.5s;
+}
+
+.icon:hover {
+  transform: translateY(-10px);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.menu-elem {
+  list-style: none;
+}
+.menu-icon {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  margin: 5px 10px;
+  /* opacity: 0.5; */
+  transition: 0.3s;
+}
+
+.menu-icon:hover {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}

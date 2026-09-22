@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftie Garden</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="stylespa.css">
+
+  </head>
+
+  <body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="https://i.ibb.co/bM419bgv/SG-icons-19.png" alt="LOGO">
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu nav-menu_visible">
+                <li class="nav-menu-item">
+                    <a href="indexadmin.html" class="nav-menu-link nav-link">Inicio</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="poderes.html" class="nav-menu-link nav-link nav-menu-link_active">Poderes</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="https://wa.me/3317427391" class="nav-menu-link nav-link">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="https://kit.fontawesome.com/e980d7fbff.js" crossorigin="anonymous"></script>
+
+<!-- PANEL DE ADMINISTRADOR -->
+<section class="admin-poderes">
+
+    <div class="admin-poderes-container">
+
+        <div class="admin-header">
+            <div>
+                <span class="admin-label">PANEL DE ADMINISTRADOR</span>
+                <h1>🌿 Gestión de poderes</h1>
+                <p>Consulta los poderes de cada Team y administra sus accesos.</p>
+            </div>
+
+            <div class="admin-status">
+                <span>●</span> Administrador
+            </div>
+        </div>
+
+
+        <!-- RESUMEN -->
+        <div class="admin-resumen">
+
+            <div class="admin-resumen-card">
+                <span>👥</span>
+                <div>
+                    <small>Teams registrados</small>
+                    <strong id="adminTotalTeams">4</strong>
+                </div>
+            </div>
+
+            <div class="admin-resumen-card">
+                <span>✨</span>
+                <div>
+                    <small>Poderes asignados</small>
+                    <strong id="adminTotalPoderes">18</strong>
+                </div>
+            </div>
+
+            <div class="admin-resumen-card">
+                <span>⚡</span>
+                <div>
+                    <small>Poderes activos</small>
+                    <strong id="adminPoderesActivos">16</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+    <div class="dar-poder-form">
+
+        <select id="selectTeamPoder">
+            <option value="">Selecciona un Team</option>
+        </select>
+
+        <select id="selectRuletaPoder">
+            <option value="">Selecciona una ruleta</option>
+            <option value="normal">Normal</option>
+            <option value="raro">Rara</option>
+            <option value="legendario">Legendaria</option>
+        </select>
+
+        <select id="selectPoder">
+            <option value="">Selecciona un poder</option>
+        </select>
+
+        <button id="btnDarPoder" type="button">
+            ✨ Dar poder
+        </button>
+
+    </div>
+
+    <p id="mensajeDarPoder" class="mensaje-dar-poder"></p>
+
+</div>
+
+<!-- DAR PODER MANUALMENTE -->
+<div class="admin-dar-poder">
+
+    <div class="dar-poder-header">
+        <div>
+            <span class="admin-label">ADMINISTRACIÓN</span>
+            <h2>✨ Dar poder a un Team</h2>
+            <p>Asigna manualmente un poder a un Team.</p>
+        </div>
+    </div>
+
+    <div class="dar-poder-form">
+
+        <select id="selectTeamPoder">
+            <option value="">Selecciona un Team</option>
+        </select>
+
+        <select id="selectRuletaPoder">
+            <option value="">Selecciona una ruleta</option>
+            <option value="normal">Normal</option>
+            <option value="raro">Rara</option>
+            <option value="legendario">Legendaria</option>
+        </select>
+
+        <select id="selectPoder">
+            <option value="">Selecciona un poder</option>
+        </select>
+
+        <button id="btnDarPoder" type="button">
+            ✨ Dar poder
+        </button>
+
+    </div>
+
+    <p id="mensajeDarPoder" class="mensaje-dar-poder"></p>
+
+</div>
+
+        <!-- BUSCADOR -->
+        <div class="admin-buscador">
+
+            <input
+                type="text"
+                id="buscarTeam"
+                placeholder="Buscar Team..."
+            >
+
+            <select id="filtroAdmin">
+                <option value="todos">Todos los Teams</option>
+                <option value="normal">Con poderes normales</option>
+                <option value="raro">Con poderes raros</option>
+                <option value="legendario">Con poderes legendarios</option>
+            </select>
+
+        </div>
+
+<div class="admin-teams" id="adminTeams">
+    <p class="poderes-cargando">
+        🌱 Cargando Teams y poderes...
+    </p>
+</div>
+
+    </div>
+
+</section>
+
+
+   <section class="contenedor">
+    <!-- Contenedor de elementos -->
+    <div class="contenedor-items">
+
+<section class="contenedor">
+
+    <div class="contenedor-items">
+
+<!--FOOTER-->
+
+<footer class="footer">
+  <ul class="social-icon">
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="" class="icon">
+        <ion-icon name="mail-outline"></ion-icon>
+      </a>
+    </li>
+  </ul>
+  <ul class="menu">
+    <li class="menu-elem">
+      <a href="index.html" class="menu-icon"> Inicio </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> Ayuda </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> Facturacion </a>
+    </li>
+    <li class="menu-elem">
+      <a href="poderes.html" class="menu-icon"> Ver todos los poderes </a>
+    </li>
+    <li class="menu-elem">
+      <a href="" class="menu-icon"> Sobre Nosotros </a>
+    </li>
+  </ul>
+  <p class="text">@2026 | Todos los derechos reservados</p>
+</footer>
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
+
+    <script src="scriptpa.js"></script>
+
+  </body>
+
+</html>
