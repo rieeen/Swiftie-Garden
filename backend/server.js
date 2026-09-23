@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: __dirname + "/.env" });
 
 const { ClientSecretCredential } = require("@azure/identity");
 const express = require("express");
@@ -10,15 +10,15 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 app.get("/", (req, res) => {
-    res.sendFile("index.html", { root: process.cwd() });
+    res.sendFile(require("path").join(__dirname, "..", "index.html"));
 });
 
-app.use(express.static(process.cwd(), { index: false }));
+app.use(express.static(require("path").join(__dirname, ".."), { index: false }));
 
 const credential = new ClientSecretCredential(
-    process.env.TENANT_ID,
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET
+    process.env.AZURE_TENANT_ID,
+    process.env.AZURE_CLIENT_ID,
+    process.env.AZURE_CLIENT_SECRET
 );
 
 async function probarDataverse() {
